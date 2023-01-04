@@ -21,7 +21,7 @@ public class LionTest {
     public void getFoodReturnPredatorFood() throws Exception {
 
         Lion lion = new Lion("Самец", feline);
-        Mockito.when(lion.getFood()).thenReturn(List.of("Животные", "Птицы", "Рыба"));
+        Mockito.when(feline.getFood("Хищник")).thenReturn(List.of("Животные", "Птицы", "Рыба"));
         List<String> expectedResult = List.of("Животные", "Птицы", "Рыба");
         List<String> actualResult = lion.getFood();
         assertEquals("Некорректный результат", expectedResult, actualResult);
@@ -31,7 +31,7 @@ public class LionTest {
     public void getKittensReturnFelineKitten() throws Exception {
 
         Lion lion = new Lion("Самец", feline);
-        Mockito.when(lion.getKittens()).thenReturn(1);
+        Mockito.when(feline.getKittens()).thenReturn(1);
         int expectedResult = 1;
         int actualResult = lion.getKittens();
         assertEquals("Некорректный результат", expectedResult, actualResult);
