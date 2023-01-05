@@ -42,7 +42,7 @@ public class FelineTest {
         assertEquals("Некорректный результат", expectedResult, actualResult);
     }
 
-    @Test
+     @Test
     public void getKittensReturnSome() {
 
         Feline feline = new Feline();

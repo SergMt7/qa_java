@@ -30,7 +30,7 @@ public class LionParameterizedTest {
         };
     }
 
-    @Test
+     @Test
     public void constructorThrowsExceptionInvalidLionGender() {
 
         Feline feline = new Feline();

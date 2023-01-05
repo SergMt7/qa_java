@@ -25,7 +25,7 @@ public class CatTest {
         assertEquals("Некорректный результат", expectedResult, actualResult);
     }
 
-    @Test
+     @Test
     public void getFoodReturnPredatorFood() throws Exception {
 
         Cat cat = new Cat(feline);

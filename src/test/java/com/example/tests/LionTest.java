@@ -51,7 +51,7 @@ public class LionTest {
 
         Feline feline = new Feline();
         Exception exception = Assert.assertThrows(Exception.class, () -> {
-            Lion lion = new Lion("Неизвестно", feline);
+             Lion lion = new Lion("Неизвестно", feline);
         });
         assertEquals("Используйте допустимые значения пола животного - самец или самка", exception.getMessage());
     }
