@@ -2,6 +2,7 @@ package com.example.tests;
 
 import com.example.Feline;
 import com.example.Lion;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
@@ -11,7 +12,6 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(MockitoJUnitRunner.class)
-
 public class LionTest {
 
     @Mock
@@ -44,5 +44,15 @@ public class LionTest {
         boolean expectedResult = true;
         boolean actualResult = lion.doesHaveMane();
         assertEquals("Некорректный результат", expectedResult, actualResult);
+    }
+
+    @Test
+    public void constructorThrowsExceptionOnUnsupportedSex() {
+
+        Feline feline = new Feline();
+        Exception exception = Assert.assertThrows(Exception.class, () -> {
+            Lion lion = new Lion("Неизвестно", feline);
+        });
+        assertEquals("Используйте допустимые значения пола животного - самец или самка", exception.getMessage());
     }
 }
